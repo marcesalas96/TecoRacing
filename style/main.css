@@ -10,15 +10,38 @@
   display: grid;
   -ms-grid-columns: 250px 4fr;
       grid-template-columns: 250px 4fr;
-  -ms-grid-rows: 4fr 1fr;
-      grid-template-rows: 4fr 1fr;
+  -ms-grid-rows: 4fr 400px;
+      grid-template-rows: 4fr 400px;
   gap: 0px 0px;
       grid-template-areas: "header main" "header contacto";
 }
 
 h2 {
+  padding-top: 30px;
   color: white;
   text-align: center;
+  font-size: 25px;
+}
+
+.boton {
+  padding: 5px;
+  color: #0d172a;
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  -webkit-text-decoration: none #0d172a solid;
+          text-decoration: none #0d172a solid;
+  -webkit-transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+          box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+}
+
+.boton:hover {
+  background-color: #1e293b;
+  color: #fff;
 }
 
 .header {
@@ -65,6 +88,8 @@ h2 {
   grid-area: main;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../multimedia/checkered-flag-texture.jpg");
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../multimedia/checkered-flag-texture.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .main__section__hero {
@@ -79,12 +104,15 @@ h2 {
           align-items: center;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../multimedia/baquet.jpeg");
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../multimedia/baquet.jpeg");
+  background-attachment: fixed;
   height: 100vh;
   background-size: cover;
   background-position: center;
 }
 
 .main__section__hero__contenedor {
+  position: -webkit-sticky;
+  position: sticky;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,29 +125,58 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  bottom: 60px;
+  top: 10px;
 }
 
-.boton {
-  padding: 5px;
-  color: #0d172a;
-  background-color: #fff;
-  border: 0 solid #e2e8f0;
-  border-radius: 1.5rem;
-  line-height: 1;
-  padding: 1rem 1.6rem;
-  -webkit-text-decoration: none #0d172a solid;
-          text-decoration: none #0d172a solid;
-  -webkit-transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
-          box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+.main__section__quienes {
+  margin-top: 100px;
+  background: black;
 }
 
-.boton:hover {
-  background-color: #1e293b;
-  color: #fff;
+.main__section__quienes__contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+  padding: 15px;
+  gap: 2rem;
+  color: white;
+}
+
+.main__section__quienes__contenedor__imagen {
+  width: 40vw;
+}
+
+.main__section__accion {
+  margin-top: 100px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url("../multimedia/Relojes.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../multimedia/Relojes.jpg");
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.main__section__accion__contenedor {
+  height: 65vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.main__section__accion__contenedor__video {
+  width: 750px;
 }
 
 .footer {
@@ -172,10 +229,12 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin-right: 15px;
 }
 
