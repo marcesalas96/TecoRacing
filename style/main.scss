@@ -12,6 +12,9 @@
     grid-template-areas: 
         "header main"
         "header contacto";
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
 }
 h2{
     padding-top: 30px;
@@ -38,23 +41,76 @@ h2{
 // HEADER
 .header{
     display: grid; 
-    grid-template-columns: 1fr; 
+    grid-template-columns: 250px; 
     grid-template-rows: 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
     "nav"; 
     grid-area: header;
-    &__contenedor{
-        margin-left: 10px;
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+    &__contenedor__nav{
+        width: 250px;
         position: fixed;
-        &__nav{
-            position: fixed;
-            grid-area: nav;
+        grid-area: nav;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        @media screen and (max-width: 768px) {
+            position: relative;
+            width: 100%;
+        }
+        &__contenedor{
+            width: 250px;
+            @media screen and (max-width: 768px){
+                width: 100%;
+            }
+            &__list{
+                display: flex;
+                flex-direction: column;
+                list-style: none;
+                width: 100%;
+                @media screen and (max-width: 768px) {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding: 0;
+                    margin: 0%;
+                    
+                }
+                &__item{
+                    padding: 10px;
+                    @media screen and (max-width: 768px) {
+                        padding: 0;
+                    }
+                    &__link{
+                        text-decoration: none;
+                        color: rgba(25, 25, 25, 0.7);
+                        padding: 10px;
+                        @media screen and (max-width: 768px) {
+                            font-size: 12px;
+                            padding: 0;
+                        }
+                        &:hover{
+                            color: rgba(0, 0, 0, 1);
+                            border-bottom: 1px black solid;
+                            transform: scale(1,5);
+                            
+                        }
+                    }
+                }
+            }
+        }
+        &__contenedorLogo{
+            margin-top: 10px;
             display: flex;
-            justify-content: flex-start;
-            gap: 1rem;
+            justify-content: center;
             &__imagen{
                 width: 200px;
+                @media screen and (max-width: 768px) {
+                    width: 100px;
+                }
             }
         }
     }
@@ -116,8 +172,22 @@ h2{
             justify-content: flex-end;
             align-items: center;
             color: white;
+            padding: 10px;
             &__video{
                 width: 750px;
+            }
+        }
+    }
+    // Carousel Section
+    &__section__fotos{
+        padding: 20px;
+        &__carousel{
+            margin-top: 10px;
+            padding: 20px;
+            &__imagen{
+                height: 85vh;
+                object-fit: cover;
+                
             }
         }
     }
